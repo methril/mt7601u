@@ -83,6 +83,8 @@
 #include <linux/kthread.h>
 #endif /* KTHREAD_SUPPORT */
 
+/* For usage of kill_pid and friends. */
+#include <linux/sched/signal.h>
 
 #include "os/rt_linux_cmm.h"
 

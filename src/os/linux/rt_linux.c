@@ -1,4 +1,4 @@
-/****************************************************************************
+                                                                                                                                                                                                                                                /****************************************************************************
 
     Module Name:
     UTIL/rt_linux.c
@@ -2151,7 +2151,7 @@ VOID RtmpDrvAllE2PPrint(
 
 VOID RtmpDrvAllRFPrint(
 	IN VOID *pReserved,
-	IN UINT32 *pBuf,
+	IN PSTRING pBuf,
 	IN UINT32 BufLen)
 {
 	struct file *file_w;
@@ -4307,7 +4307,7 @@ VOID RtmpOsFreeSpinLock(NDIS_SPIN_LOCK *pLockOrg)
 	/* we will free all locks memory in RTMP_OS_FREE_LOCK() */
 	OS_NDIS_SPIN_LOCK *pLock;
 
-	pLock = (OS_NDIS_MINIPORT_TIMER *) (pLockOrg->pContent);
+	pLock = (OS_NDIS_SPIN_LOCK *) (pLockOrg->pContent);
 	if (pLock != NULL) {
 		OS_NdisFreeSpinLock(pLock);
 
